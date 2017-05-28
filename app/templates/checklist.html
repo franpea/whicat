@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Header -->
+	<div class="jumbotron">
+		<div class="container">
+			<div class="inner cover">
+				<h1 class="cover-heading">Why Cat Checklist</h1>
+				<div class="row">
+					<div class="col-md-7">
+					<p>
+					The Why Cat Checklist helps you hone your critical analysis skills.
+					It shows you what to look for - the signposts of well-researched, 
+					balanced and unbiased health information. So you know which websites 
+					you can trust.</p>
+					<p>
+					Here's how it works. Copy and paste the URL of the website you've found
+					into the box below. Then click Start. We'll show you a question about the
+					website, which you answer. You can easily look at the website to answer the
+					question, because it's right there, on the same page. There's hints and 
+					examples for each question.
+					</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Top Section -->
+    <div class="container">
+			<form>
+				<div class="form-group row">
+					<div class="col-md-6">
+						<label for="URL">Address of the health website</label>
+						<input type="text" class="form-control" id="URL" placeholder="Copy & paste website's URL here">
+					</div>				
+				</div>
+ 			<!-- <button type="submit" class="btn btn-default">Start Checklist</button> -->
+ 				<a href="checklist-Q1.html" class="btn btn-default">Start Checklist</a>
+			</form> 
+	</div>
+
+{% endblock %}
