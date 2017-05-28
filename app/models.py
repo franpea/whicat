@@ -17,8 +17,8 @@ class QuestionSet(db.Model):
 class Tutorial(db.Model):
     Tutorial_ID = db.Column(db.Integer, primary_key=True)
     TutorialVersion = db.Column(db.Integer, primary_key=True)
-    QuestionSet_ID = db.Column(db.Integer, foreign_key=True)
-    QuestionNumber = db.Column(db.Integer, foreign_key=True)
+    QuestionSet_ID = db.Column(db.Integer, db.ForeignKey('QuestionSet.QuestionSet_ID'))
+    QuestionNumber = db.Column(db.Integer, db.ForeignKey('QuestionSet.QuestionNumber'))
     TutorialCategory = db.Column(db.String(6), index=True, unique=False)
     CorrectAnswer = db.Column(db.Integer, index=True, unique=False)
     ExpertFeedback = db.Column(db.String(), index=True, unique=True)
@@ -26,9 +26,9 @@ class Tutorial(db.Model):
 
 class UserAnswers(db.Model):
     Answers_ID = db.Column(db.Integer, primary_key=True)
-    Session_ID = db.Column(db.String(), foreign_key=True)
-    URL_ID = db.Column(db.Integer, foreign_key=True)
-    QuestionSet_ID = db.Column(db.Integer, foreign_key=True)
+    Session_ID = db.Column(db.String(), primary_key=True)
+    URL_ID = db.Column(db.Integer, db.ForeignKey('URLs.URL_ID'))
+    QuestionSet_ID = db.Column(db.Integer, db.ForeignKey('QuestionSet.QuestionSet_ID'))
     QuestionNumber1 = db.Column(db.Integer, index=False, unique=False)
     QuestionNumber2 = db.Column(db.Integer, index=False, unique=False)
     QuestionNumber3 = db.Column(db.Integer, index=False, unique=False)
