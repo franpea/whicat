@@ -7,4 +7,4 @@ def updateQuestion(number, newQuestion):
     question.QuestionText = newQuestion
     db.session.commit()
 
-updateQuestion(1, "What is a duck")
+updateQuestion(2, "What is a duck")
