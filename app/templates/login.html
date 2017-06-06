@@ -1,20 +1,32 @@
-<!-- extend from base layout -->
 {% extends "base.html" %}
-
 {% block content %}
-    <h1>Hi, {{ user.nickname }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
 
-  <h1>Sign In</h1>
-  <form action="" method="post" name="login">
-      {{ form.hidden_tag() }}
-      <p>
-          Please enter your OpenID:<br>
-          {{ form.openid(size=80) }}<br>
-      </p>
-      <p>{{ form.remember_me }} Remember Me</p>
-      <p><input type="submit" value="Sign In"></p>
+<!-- Header -->
+	<div class="jumbotron">
+		<div class="container">
+			<div class="inner cover">
+				<h1 class="cover-heading">Why Cat Reports Login</h1>
+				<div class="row">
+					<div class="col-md-7">
+					<p>
+					This is the login for the sponsor to be able to view the generated reports.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- Top Section -->
+    <div class="container">
+        <form  action="" method="post" role="form">
+    {{ form.csrf }}
+    <div class="form-group">
+      <label for="URL">Login:</label>
+      <input type="text" class="form-control" id="URL" name="URL" placeholder="Enter Username">
+        <input type="text" class="form-control" id="URL" name="URL" placeholder="Enter Password">
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
   </form>
+	</div>
+
 {% endblock %}
