@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Header -->
+	<div class="jumbotron">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10">
+					<h1>Question #{{ question.number }}</h1>
+					<h2>{{ question.text|safe }}</h2>
+					<form>
+						<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-primary radio-btn">
+							<input type="radio" name="Q{{ number }}" id="A1" value="1" autocomplete="off"> {{ question.button1 }}
+							</label>
+							<label class="btn btn-primary radio-btn">
+								<input type="radio" name="Q{{ number }}" id="A2" value="2" autocomplete="off"> {{ question.button2 }}
+							</label>
+							<label class="btn btn-primary radio-btn">
+								<input type="radio" name="Q{{ number }}" id="A3" value="3" autocomplete="off"> {{ question.button3 }}
+							</label>
+							<label class="btn btn-primary radio-btn">
+								<input type="radio" name="Q{{ number }}" id="A4" value="4" autocomplete="off"> {{ question.button4 }}
+							</label>
+							<label class="btn btn-primary radio-btn">
+								<input type="radio" name="Q{{ number }}" id="A5" value="5" autocomplete="off"> {{ question.button5 }}
+							</label>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-2 bottom-align-text">
+					<!--<a href="#iframe-Q1">View Website</a>-->
+					<a href="/checklist/complete" class="btn btn-default">I'm finished!</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}

@@ -14,7 +14,6 @@
     font-family: Slabo;
     src: url(slabo.ttf);
 }
-
 body {
 	font-family: OpenSans, sans-serif;
 }
@@ -33,9 +32,12 @@ h1,h2,h3,h4,h5,h6 {
 .tab-content li {
 	font-size: 14px;
 }
+/*.disclaimer {
+	color: red;
+}*/
 footer {
-	font-family: 'Times New Roman', serif;
-	font-size: 12px;
+	font-family: Slabo, serif;
+	font-size: 10px;
 }
 
 
@@ -50,6 +52,7 @@ footer {
 	background-image: url("microscope-with-medical-high-tech-science-abstract-background.jpg");	/* microscope */
 }
 .radio-btn {
+	color: black;
 	background-color: #409EFE;	/* mid blue */	
 }
 div > img.photo {
@@ -60,7 +63,6 @@ div > img.photo {
 .panel-default>.panel-heading {
 	background-color: #B2FF4D;	/* apple green */	
 }
-
 .panel-default {
 	background-color: #C0C0C0;	/* silver */	
 }
@@ -85,7 +87,7 @@ footer {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #555;
+  color: #555;					/* grey */
   background-color: #B2FF4D;	/* apple green */
 }
 
@@ -106,6 +108,10 @@ section {
   margin: 20px auto 0px;
 }
 
+img {
+	vertical-align: bottom;
+	
+}
 /* Radio buttons (mobile viewport) */
 .radio-btn {
     margin: 10px 10px 10px 0;

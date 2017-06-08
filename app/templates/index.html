@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
 <!-- Header -->
 	<div class="jumbotron">
 		<div class="container">
@@ -7,7 +8,7 @@
 					<h1 class="cover-heading">Why Cat</h1>
 					<h2>Look after your health.<br> Learn how to spot websites you can trust.</h2>
 					<p class="lead">
-					<a href="checklist-start.html" class="btn btn-lg btn-default">Try Checklist</a>
+					<a href="/checklist" class="btn btn-lg btn-default">Try Checklist</a>
 					</p>
 				</div>
 		</div>
@@ -17,15 +18,25 @@
     <div class="container">
 		<section>
 			<div class="row">
-				<div class="col-md-8">
-					<h1>What is Why Cat?</h1>
-					<p>Why Cat teaches teenagers how to critically assess the quality of online health information.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-					occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-					laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<div class="col-md-6">
+					<h1>Welcome to Why Cat</h1>
+					<p>Why Cat is a simple checklist that helps consumers decide whether a website 
+					with online health information is trustworthy. A trustworthy website 
+					has good quality online health information.</p>
+					<p>The checklist has 12 questions.</p>
+					<p>Questions 1 - 11 each focus on one detail that can help you judge whether 
+					a website with online health information is trustworthy. Each question will 
+					ask you to give a website a score. Each question has extra information and 
+					a link to an example of a trustworthy website.</p>
+					<p>Question 12 asks you to decide whether a website with online health information 
+					is trustworthy. Your answers to Questions 1 to 11 will help you answer this question. 
+					You should only decide that a website as trustworthy if you give it good scores for 
+					Questions 1 to 11</p>
+					<p>There is also a tutorial, which shows how we used the checklist to decide whether 
+					websites with online health information were trustworthy.</p>
 				</div>
-				<div class="col-md-4">
-					<img class="img-responsive photo" alt="young adult male smiling holding tablet" src="static/whicat/images/male-student.jpg">
+				<div class="col-md-6">
+					<img class="img-responsive photo" alt="two young women seating at workbench looking at yellow laptop" src="static/whicat/images/two_young_women_looking_at_yellow_laptop.jpg">
 				</div>
 			</div>
 		</section>
@@ -35,17 +46,31 @@
 		<section>
 			<div class="row">
 				<div class="col-md-4">
-					<img class="img-responsive" alt="three clipart persons using laptops perched on 3D letters spelling web" src="static/whicat/images/web-word-showing-world-wide-color-adjusted.jpg">
+					<img class="img-responsive" alt="three clipart persons using laptops perched on 3D letters spelling web" src="static/whicat/images/clipart_web_green.jpg">
 				</div>
 				<div class="col-md-8">
 					<h1>About Us</h1>
-					<p>Why Cat teaches teenagers how to critically assess the quality of online health information.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-					occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-					laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<p>Why Cat has been developed by university academics, a doctor and computer science students.</p>
+					<p>Dr Karen Scott is a senior lecturer and education academic who specialises in medical education, 
+					elearning, and health education research. Dr Scott works for the Discipline of Child and Adolescent Health 
+					at The University of Sydney and is based at the Children’s Hospital at Westmead, Sydney, Australia.</p>
+					<p>Associate Professor Patrina Caldwell is a senior staff specialist paediatrician who develops eHealth 
+					and conducts medical and health education research. A/Prof Caldwell works for the Children’s Hospital 
+					at Westmead, Sydney and the Discipline of Child and Adolescent Health at The University of Sydney, Australia.</p>
+					<p>Macquarie University Department of Computer Science students developed Why Cat as part of 
+					the Professional and Community Engagement Program.</p>
 				</div>
 			</div>
 		</section>
 	</div>
-	
-	{% endblock %}
+    <div class="container disclaimer">
+	<section>
+	<h2>Disclaimer</h2>
+	<p>Why Cat aims to help consumers assess the trustworthiness of online health information. It is not intended 
+	to replace medical advice and any questions regarding a medical diagnosis or treatment should be directed to a 
+	medical practitioner. Why Cat was developed without any commercial funding and is not influenced by any commercial 
+	organisations.</p>
+	</section>
+	</div>
+
+{% endblock %}

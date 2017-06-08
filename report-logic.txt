@@ -1,0 +1,29 @@
+#### REMEMBER ME ####
+from app import db, models
+import datetime
+from __future__ import division
+
+#function 1
+def calcAvg(answers):
+	"""returns average score for a website received based on completed assessments,
+	BEWARE: assumes answer12 is not null"""
+	score = 0
+	for a in answers:
+		score += a.answer12
+	return score/len(answers)
+
+#function 2
+def rankingDict(websites):
+	"""create a dict of website and average score"""
+	tally = {}
+	for w in websites:
+		x = models.Website.query.get(w.id)
+		answers = x.assessments.all()
+		if len(answers) is not None:
+			tally[w.title] = calcAvg(answers)
+	return tally
+
+#obtain all websites
+websites = models.Website.query.all()
+
+sitescores = rankingDict(websites)

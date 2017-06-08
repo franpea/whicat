@@ -6,31 +6,31 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-10">
-					<h1>Question #1</h1>
-					<h2>Are the aims of the website clear?</h2>
+					<h1>Question #{{ question.number }}</h1>
+					<h2>{{ question.text|safe }}</h2>
 					<form>
 						<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-primary radio-btn">
-							<input type="radio" name="Q1" id="Q1-A1" autocomplete="off"> Not clear
+							<input type="radio" name="Q{{ number }}" id="A1" value="1" autocomplete="off"> {{ question.button1 }}
 							</label>
 							<label class="btn btn-primary radio-btn">
-								<input type="radio" name="Q1" id="Q1-A2" autocomplete="off"> Sort of clear
+								<input type="radio" name="Q{{ number }}" id="A2" value="2" autocomplete="off"> {{ question.button2 }}
 							</label>
 							<label class="btn btn-primary radio-btn">
-								<input type="radio" name="Q1" id="Q1-A3" autocomplete="off"> Can't decide
+								<input type="radio" name="Q{{ number }}" id="A3" value="3" autocomplete="off"> {{ question.button3 }}
 							</label>
 							<label class="btn btn-primary radio-btn">
-								<input type="radio" name="Q1" id="Q1-A4" autocomplete="off"> Mostly clear
+								<input type="radio" name="Q{{ number }}" id="A4" value="4" autocomplete="off"> {{ question.button4 }}
 							</label>
 							<label class="btn btn-primary radio-btn">
-								<input type="radio" name="Q1" id="Q1-A5" autocomplete="off"> Very Clear
+								<input type="radio" name="Q{{ number }}" id="A5" value="5" autocomplete="off"> {{ question.button5 }}
 							</label>
 						</div>
 					</form>
 				</div>
 				<div class="col-md-2 bottom-align-text">
 					<!--<a href="#iframe-Q1">View Website</a>-->
-					<a href="checklist-Q2.html" class="btn btn-default">Next Question</a>
+					<a href="/checklist/question/{{ nextNum }}" class="btn btn-default">Next Question</a>
 				</div>
 			</div>
 		</div>
@@ -49,19 +49,16 @@
 		  <div class="tab-content" id="myTabs">
 			<div role="tabpanel" class="tab-pane active" id="hints">
 				<section>
-					<p>Does the website include a statement about:</p>
-					<ul>
-						<li>what it is about</li>
-						<li>what topics it includes</li>
-						<li>who it is for?</li>
-					</ul>
-					<p>Does the website provide the information it aims to provide?</p>
+				
+					{{ question.hint|safe }}
+				
 				</section>
 			</div>
 			<div role="tabpanel" class="tab-pane" id="examples">
 				<section>
-					<p>A good example is <a href="http://yfoundations.org.au/need-help/support-and-services/youth-health/" target="_blank">yfoundations</a>.
-					This website states that its aim is, "to provide youth health sector support, through the Youth Health Council and by working with youth health practitioners across NSW."</p> 
+				
+					{{ question.example|safe }}
+
 				</section>
 			</div>
 		  </div>
@@ -74,11 +71,11 @@
 	
 			<div class="panel panel-default" id="iframe-Q1">
 				<div class="panel-heading">
-					<h3 class="panel-title"><strong>Health Website:</strong> www.mydr.com.au/respiratory-health/common-cold <input type='image' src="images/glyphicons-82-refresh-lightened.png" onclick="self.location.reload();" /></h3>
+					<h3 class="panel-title"><strong>Health Website:</strong> www.govita.com.au/health/acne <input type='image' src="{{ url_for('static', filename='whicat/images/glyphicons-82-refresh-lightened.png') }}" onclick="self.location.reload();" /></h3>
 				</div>
 				<div class="panel-body">
 
-					<iframe height="600px" width="100%" src="http://www.mydr.com.au/respiratory-health/common-cold">
+					<iframe height="600px" width="100%" src="http://www.govita.com.au/health/acne/">
 					<p>Your browser does not support iframes.</p>
 					</iframe>
 

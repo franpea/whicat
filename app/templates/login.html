@@ -2,19 +2,74 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ user.nickname }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+  <script type="text/javascript">
+  function set_openid(openid, pr)
+  {
+    u = openid.search('<username>')
+    if (u != -1) {
+        // openid requires username
+        user = prompt('Enter your ' + pr + ' username:')
+        openid = openid.substr(0, u) + user
+    }
+    form = document.forms['login'];
+    form.elements['openid'].value = openid
+  }
+  </script>
+  <!-- Header -->
+	<div class="jumbotron">
+		<div class="container">
+			<div class="inner cover">
+				<h1 class="cover-heading">Login</h1>
+				<div class="row">
+					<div class="col-md-7">
+					<p>
+					You don't need a login to use the Why Cat website. The administrator login
+					is provided for the purpose of site maintenance and analysis.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- Top Section -->
+    <div class="container">
+		<form action="" method="post" name="login">
+			<div class="form-group row">
+				<div class="col-md-6">
 
-  <h1>Sign In</h1>
-  <form action="" method="post" name="login">
-      {{ form.hidden_tag() }}
-      <p>
-          Please enter your OpenID:<br>
-          {{ form.openid(size=80) }}<br>
-      </p>
-      <p>{{ form.remember_me }} Remember Me</p>
-      <p><input type="submit" value="Sign In"></p>
-  </form>
+					{{ form.hidden_tag() }}
+						Please enter your OpenID
+					{{ form.openid(size=40) }}
+					
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-6">
+				
+					{% for error in form.openid.errors %}
+							<span style="color: red;">[{{error}}]</span>
+					{% endfor %}
+
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-6">
+
+					Or select your provider
+					|{% for pr in providers %}
+						<a href="javascript:set_openid('{{ pr.url }}', '{{ pr.name }}');">{{ pr.name }}</a> |
+					{% endfor %}
+
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-4">
+
+					{{ form.remember_me }} Remember Me
+
+				</div>
+			</div>
+			<input type="submit" class="btn btn-default" value="Login">
+		</form> 
+	</div>
+  
 {% endblock %}
